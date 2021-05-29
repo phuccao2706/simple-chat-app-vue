@@ -11,13 +11,9 @@
 
 <script>
 import Navbar from "@/components/Navbar";
-import initPlayer from "@/utils/initPlayer";
 
 export default {
   name: "App",
   components: { Navbar },
-  mounted() {
-    initPlayer();
-  },
 };
 </script>

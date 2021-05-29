@@ -10,10 +10,6 @@
 
       <v-divider></v-divider>
 
-      <v-list-item class="px-5"> <TilThatDate /> </v-list-item>
-
-      <v-divider></v-divider>
-
       <v-list dense>
         <v-list-item
           link
@@ -31,28 +27,16 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-
-      <v-divider></v-divider>
-
-      <v-list-item class="px-5"> <PlayerControl /> </v-list-item>
     </v-navigation-drawer>
   </nav>
 </template>
 
 <script>
-import TilThatDate from "./TilThatDate";
-import PlayerControl from "./PlayerControl";
-
 export default {
-  components: { TilThatDate, PlayerControl },
   data() {
     return {
       drawer: false,
-      links: [
-        { icon: "dashboard", title: "Dashboard", route: "/" },
-        { icon: "folder", title: "Category", route: "/category" },
-        { icon: "person", title: "Team", route: "/team" },
-      ],
+      links: [{ icon: "dashboard", title: "Dashboard", route: "/" }],
     };
   },
 };

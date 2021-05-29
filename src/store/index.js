@@ -17,7 +17,6 @@ const store = new Vuex.Store({
       state.isLoggedIn = true;
     },
     [COMMIT_KEYS.LOGOUT](state) {
-      console.log("object");
       state.isLoggedIn = false;
     },
   },

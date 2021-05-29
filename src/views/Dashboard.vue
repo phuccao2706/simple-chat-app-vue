@@ -1,30 +1,28 @@
 <template>
   <div class="dashboard">
-    <p class="text-h3 ml-5 mt-5 pink--text text--lighten-4">Dashboard</p>
-
-    <div class="logout">
-      <v-btn @click="this.handleRemoveAccessToken" class="pink white--text"
-        >Logout</v-btn
-      >
-    </div>
+    <p class="text-h3 ml-5 mt-5 pink--text text--lighten-4">{{ cats }}</p>
   </div>
 </template>
 
 <script>
-import { COMMIT_KEYS } from "../appConstants";
-import { removeAccesstoken } from "../utils";
+import gql from "graphql-tag";
+
+const hihi = gql`
+  query {
+    cats {
+      id
+      name
+      age
+      breed
+    }
+  }
+`;
 
 export default {
   name: "Category",
-  data: () => ({
-    categories: [],
-  }),
-  methods: {
-    handleRemoveAccessToken() {
-      this.$store.commit(COMMIT_KEYS.LOGOUT);
-
-      return removeAccesstoken();
-    },
+  methods: {},
+  apollo: {
+    cats: hihi,
   },
 };
 </script>
